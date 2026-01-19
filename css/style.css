@@ -1,0 +1,230 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --primary: #6dbc75;
+    --primary-hover: #77be7e;
+    --bg-light: #F7F9FC;
+    --text-dark: #444;
+    --text-muted: #666;
+}
+
+body {
+    /* background-color: #eaf7ec; */
+    background: linear-gradient(135deg, #eaf7ec 0%, #f0fff1 100%);
+    color: var(--text-dark);
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+main {
+    min-height: 500px;
+    width: 90%;
+    background-color: #F7F9FC;
+    border-radius: 15px;
+    padding: 50px;
+    margin: 90px auto;
+}
+
+#mainHeader {
+    color: rgb(102, 102, 102);
+    padding: 10px 0;
+}
+
+#mainHeader .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#mainHeader nav ul {
+    display: flex;
+    align-content: center;
+    gap: 20px;
+}
+
+#mainHeader nav ul li {
+    list-style-type: none;
+}
+
+#mainHeader a {
+    text-decoration: none;
+    color: #444;
+    padding: 8px 6px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+#mainHeader a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: var(--primary);
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+#mainHeader a:hover {
+    color: var(--primary);
+}
+
+#mainHeader a.active {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+#mainHeader a:hover::after,
+#mainHeader a.active::after {
+    width: 100%;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.lDiv h3 {
+    line-height: 1.3;
+    margin-top: 40px;
+    font-family: 'Raleway', serif;
+    font-weight: 700;
+    font-size: 42px;
+}
+
+span {
+    font-weight: 700;
+    font-size: 37px;
+    color: var(--primary);
+}
+
+h1 span {
+    color: rgb(240, 255, 241);
+    width: 20px;
+    height: 20px;
+    padding: 0px 2px;
+    border-radius: 0px 10px 10px 0px;
+    background-color: #6dbc75;
+    box-shadow: 0 5px 15px rgba(109, 188, 117, 0.4);
+
+}
+
+.lDiv p {
+    margin-top: 30px;
+    color: rgb(102, 102, 102);
+    max-width: 480px;
+}
+
+.lDiv a {
+    display: inline-block;
+    /*To apply margin*/
+    margin-top: 40px;
+    background: linear-gradient(90deg, #6dbc75, #77be7e);
+    box-shadow: 0 12px 25px rgba(109, 188, 117, 0.4);
+    padding: 15px;
+    text-decoration: none;
+    color: rgb(240, 244, 248);
+    border-radius: 10px;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.lDiv a:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(109, 188, 117, 0.45);
+}
+
+.lDiv {
+    animation: fadeUp 0.8s ease forwards;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.rDiv img {
+    height: 250px;
+    width: 300px;
+    max-width: 100%;
+    object-fit: cover;
+    margin-top: 30px;
+    border-radius: 7px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.rDiv img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.rDiv {
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+
+@media (max-width: 768px) {
+    main {
+        padding: 30px;
+    }
+
+    #mainHeader {
+        margin-bottom: 20px;
+    }
+
+    #mainHeader .container {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        text-align: center;
+    }
+
+    #mainHeader nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 8px;
+
+    }
+
+    #mainHeader a {
+        font-size: 15px;
+        padding: 6px 8px;
+    }
+
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .lDiv p {
+        margin: 0 auto;
+    }
+}
